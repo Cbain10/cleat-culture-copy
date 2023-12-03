@@ -1,14 +1,22 @@
-import LookupCleatButton from "../../components/lookupCleatButton/LookupCleatButton";
-import RecommendCleatButton from "../../components/recommendCleatButton/RecommendCleatButton";
+import { Link } from 'react-router-dom';
+import { GenericButton } from '../../components/buttons/generic-button/GenericButton';
+import TableChartIcon from '@mui/icons-material/TableChart';
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import './Home.css';
 
 const Home = () => {
-
     return (
-        <div className="button-container">
-            <LookupCleatButton />
-                <div className="divider"/>
-            <RecommendCleatButton />
+        <div className="buttons-container">
+            <Link to={`/cleat-table`}>
+                <GenericButton>
+                    <TableChartIcon fontSize='large' />
+                </GenericButton>
+            </Link>
+            <Link to={`/chooser`}>
+                <GenericButton>
+                    <ManageSearchIcon fontSize='large' />
+                </GenericButton>
+            </Link>
         </div>
     )
 }
